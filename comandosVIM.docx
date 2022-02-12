@@ -1,0 +1,34 @@
+==============Comando do VIM escritos no VIM==================
+
+Navegando pelo vim use as setas ou:
+H(esqueda), J(baixo),k(cima) e l(direita).
+
+==============================================================
+================comandos no  TERMINAL()=======================
+{
+vim .			     #navega nas pastas
+vim <caminho_para_o_arquivo> #abre o arquivo que tu quer
+} 
+==============================================================
+=====terminalzinho do vim que acessamos usando o <Esc>()======
+{
+(u)   apaga a ultima coisa que fizemos.
+(i)   entra no modo de edição do arquivo.
+(v)   entra em um modo de seleção(MODO VISUAL).
+(p)   cola oque esta copiado no MODO VISUAL.
+(:q)  sai do arquivo sem estar editado.
+(:w)  salva as alterações no arquivo.
+(:wq) sai e salva o arquivo.
+(:!)  força para fazer os comandos com ":".
+}
+=============================================================
+===================MODO VISUAL()=============================
+{
+[y] copia oque esta selecionado
+[d] apaga oque esta selecionado                           
+[c] mesmo que o "d" e entra no modo inserção
+}
+==============================================================
+
+
+
