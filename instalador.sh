@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #Instalando software:
 #cria uma pasta software na diretiva /home/"usuario"
 #move a pasta do executavel para pasta de software
@@ -52,4 +51,3 @@ echo "Terminal=false" 					      >> ${executavel}.desktop
 sudo mv ${executavel}	      /bin/
 sudo mv ${executavel}.desktop /usr/share/applications/
 echo "Instalação Concluida Com sucesso!!!"
-
