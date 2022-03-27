@@ -1,4 +1,4 @@
-u #!/bin/bash
+#!/bin/bash
 
 #variaveis
 opcao=()
@@ -230,7 +230,7 @@ if [[ ${opcao[15]} == $Selected ]]
    ./setup.sh
    cd ..
 
-   sudo cp configI3 /home/${USER}/.config/i3/
+   sudo cp configI3 /home/${USER}/.config/i3/config
    
    sudo chmod 777 -R /home/${USER}
 fi
