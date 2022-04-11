@@ -144,10 +144,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym Print exec flatpak run org.flameshot.Flameshot
-
-exec --no-startup-id $polybar/launch.sh --$interface
-
+#exec --no-startup-id $polybar/launch.sh --$interface
 #Se executar tem varias outras interfaces --{outras}
 #exec --no-startup-id ~.config/polybar/launch.sh
 
+bar {
+        status_command i3status
+}

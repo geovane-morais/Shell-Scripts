@@ -187,13 +187,18 @@ if [[ ${opcao[13]} == $Selected ]]
       sudo apt install flatpak -y
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       flatpak install flathub org.flameshot.Flameshot -y
-      if [[ -d /home/${USER}/.config/i3 ]]
-         then
-         if [[ -z $(cat /home/${USER}/.config/i3/config | grep Print) ]]
-            then
-            echo -e "\n\nbindsym Print exec flatpak run org.flameshot.Flameshot" >> /home/${USER}/.config/i3/config
-         fi
-      fi      
+
+	  echo -e "\nINFORME O USUARIO:"
+	  read user1
+	  if [[ -e "/home/${user1}/.config/i3/config" ]]; then
+		if [[ -z $(cat /home/${user1}/.config/i3/config |grep Print) ]]; then
+	    	echo -e "\n#====================FLAMESHOT [atalho]=======================" >> /home/${user1}/.config/i3/config
+	    	echo -e "\nbindsym Print exec \"flatpak run org.flameshot.Flameshot gui\"" >> /home/${user1}/.config/i3/config
+        	echo -e "\n#=============================================================\n" >> /home/${user1}/.config/i3/config
+		else
+		   	echo -e "\n\nJÁ ESTA UTILIZADO A TECLA PRINT [atalho]\n\n"
+	  	 fi
+      fi
 fi
 
 if [[ ${opcao[14]} == $Selected ]] 
