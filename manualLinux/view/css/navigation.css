@@ -1,0 +1,11 @@
+.nav-class{
+  position: fixed;
+  top: var(--tamanho-header);
+  left: 0;
+  height: 100%;
+  width: 13em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color:  #e6e7d8;
+}
