@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Manual</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body>
+<!-- Sinal menor que < = &lt; e maior que > = &gt;. -->
+    <div class="display-page">
+        <header>
+            <div class="header-class">
+                <img src="../assets/pc.png" alt="Icone de Manual">
+                <p>Manuais</p>
+                <p>Projetos</p>
+                <p>Quem sou</p>
+            </div>
+        </header>
+
+        <nav>
+            <div id="nav-id" class="nav-class"></div>
+        </nav>
+
+        <main>
+            <div  id="main-id" class="main-class">
+                <h1 class="titleH1">Como trocar o usuario:</h1>
+                <div class="terminal">
+                    <p>$ &nbsp sudo su</p>
+                    <p>&nbsp &nbsp &nbsp &nbsp &nbsp ou</p>
+                    <p>$ &nbsp su usuario</p>
+                </div>
+                
+                <h1 class="titleH1">Setar dono do diretorio</h1>
+                <p>$ &nbsp chown -R usuario:grupo Caminho_Diretorio</p>
+                
+                <h1 class="titleH1">Navegação pelos diretorios</h1>
+                <div class="terminal">
+                    <p >/etc/apt $ &nbsp cd ..</p>
+                    <p >/etc $</p>
+                    <p >/etc $ &nbsp cd apt</p>
+                    <p >/etc/apt $ &nbsp</p>
+                </div>
+                
+                <h1 class="titleH1">Permissão dentro de diretorios</h1>
+                <p>$ &nbsp chmod 777 Caminho_Diretorio // Permite a comunicação serial (USB) de PC e microcontroladores, no ubuntu a pasta é “/dev/ttyACM0”</p>
+                
+                <h1 class="titleH1">Compactar arquivos</h1>
+                <div class="terminal">
+                    <p>$ &nbsp zip -r nome_do_pacote.zip pasta/</p>
+                    <p>$ &nbsp tar -cvf nome_do_pacote.tar pasta/</p>
+                </div>
+
+                <h1 class="titleH1">Descompactar arquivos</h1>
+                <div class="terminal">
+                    <p>$ &nbsp unzip nome_do_pacote.zip</p>
+                    <p>$ &nbsp tar -xvf nome_do_pacote.tar</p>
+                </div>
+
+                <h1 class="titleH1">Gerenciador de pacotes APT</h1>
+                <div class="terminal">
+                    <p>$ &nbsp apt search nvidia //procura pacotes envolvidos com nvidia</p>
+                    <p>$ &nbsp sudo apt-get install "EX:pacote"</p>
+                    <p>$ &nbsp Sudo dpkg -i package_file.deb // instala apenas o .deb</p>
+                    <p>$ &nbsp sudo dpkg -i *.deb // instala todos .deb na pasta</p>
+                    <p>$ &nbsp sudo apt install package_file.deb // instala o .deb com dependencias</p>
+                    <p>$ &nbsp sudo apt --fix-broken install //repara pacotes</p>
+                </div>
+
+                <h1 class="titleH1">Listar dispositivos USB</h1>
+                <p>$ &nbsp lsusb</p>
+
+                <h1 class="titleH1">Listar dispositivos PCI</h1>
+                <p>$ &nbsp lspci</p>
+
+                <h1 class="titleH1">Gerenciamento de Disco</h1>
+                <div class="terminal">
+                    <p>$ &nbsp fdisk -l lista //todos os discos</p>
+                    <p>$ &nbsp fdisk /dev/sda //entra dentro do disco sda podendo particionar como quiser</p>
+                    <p>$ &nbsp mkfs.ext4 /dev/sda1 faz a partição ser ext4</p>
+                    <p>$ &nbsp para montar ela apenas uma vez:  mount -t ext4 /dev/sda1 /mnt/hdd</p>
+                    <p>$ &nbsp para desmontar:  unmont /mnt/hdd</p>
+                    <p>$ &nbsp verificar o UUID da partição:  blkid /dev/sda1</p>
+                    <p>$ &nbsp para ficar montado toda vez que entrar no sistema adicionar no /etc/fstab</p>
+                    <p>
+                        &nbsp; # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;file system&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp; &lt;dir&gt;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;type&gt;
+                        &nbsp; &lt;options&gt;
+                        &nbsp; &lt;dump&gt;
+                        &nbsp; &lt;pass&gt;
+                    </p>
+                    <p>
+                        &nbsp; UUID=2e79c063-54f1-4359-a203-0382182afc99 
+                        &nbsp; /mnt/hdd
+                        &nbsp;&nbsp;&nbsp; ext4
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; defaults 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0
+                    </p>
+                </div>
+
+                <h1 class="titleH1">REDES</h1>
+                <div class="Formatacao1">
+                    <p> 
+                        Caso os comandos de rede não funcione usar como (su - ) <br>
+                        O pacote ( net-tools ) é muito importante
+                    </p>
+                </div>
+
+                <h1 class="titleH1">Verificar informações das placas de rede</h1>
+                <div class="terminal">
+                    <p>$ ifconfig</p><br>
+                    <p>enp2s0f0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</p>
+                    <p>&nbsp; &nbsp; &nbsp; inet 192.168.0.107  netmask 255.255.255.0  broadcast 192.168.0.255</p>
+                    <p>&nbsp; &nbsp; &nbsp; inet6 fe80::223:5aff:fe75:2271  prefixlen 64  scopeid 0x20&lt;link&gt;</p>
+                    <p>&nbsp; &nbsp; &nbsp; ether 00:23:5a:75:22:71  txqueuelen 1000  (Ethernet)</p>
+                    <p>&nbsp; &nbsp; &nbsp; RX packets 245146  bytes 295245439 (281.5 MiB)</p>
+                    <p>&nbsp; &nbsp; &nbsp; RX errors 0  dropped 1  overruns 0  frame 0</p>
+                    <p>&nbsp; &nbsp; &nbsp; TX packets 122111  bytes 21520446 (20.5 MiB)</p>
+                    <p>&nbsp; &nbsp; &nbsp; TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</p>
+                    <p>&nbsp; &nbsp; &nbsp; device interrupt 16</p><br>
+
+                    <p>lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536</p>
+                    <p>&nbsp; &nbsp; &nbsp; inet 127.0.0.1  netmask 255.0.0.0</p>
+                    <p>&nbsp; &nbsp; &nbsp; inet 127.0.0.1  netmask 255.0.0.0</p>
+                    <p>&nbsp; &nbsp; &nbsp; inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;</p>
+                    <p>&nbsp; &nbsp; &nbsp; loop  txqueuelen 1000  (Local Loopback)</p>
+                    <p>&nbsp; &nbsp; &nbsp; RX packets 30  bytes 2840 (2.7 KiB)</p>
+                    <p>&nbsp; &nbsp; &nbsp;  RX errors 0  dropped 0  overruns 0  frame 0</p>
+                    <p>&nbsp; &nbsp; &nbsp; TX packets 30  bytes 2840 (2.7 KiB)</p>
+                    <p>&nbsp; &nbsp; &nbsp; TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</p>
+                </div>
+
+                <h1 class="titleH1">Verificar interfaces de redes</h1>
+                <div class="terminal">
+                <p>$ netstat -i -a</p><br>
+                <p>Kernel Interface table</p>
+                <p>Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg</p>
+                <p>enp2s0f0  1500   248866      0      1 0        125420      0      0      0 BMRU</p>
+                <p>lo       65536     3474      0      0 0          3474      0      0      0 LRU</p>
+                <p>wlp3s0    1500    13968      0      0 0           590      0      0      0 BMRU</p>
+                </div>
+
+                <h1 class="titleH1">IP STATICO OU DHCP</h1>
+                <div class="terminal">
+                    <p>$ nano /etc/network/interfaces</p><br>
+                    <p>allow-hotplug enp0s3</p>
+                    <p>auto enp0s3</p>
+                    <p>iface enp0s3 inet static</p>
+                    <p>address 192.168.0.10</p>
+                    <p>netmask 255.255.255.0</p>
+                    <p>network 192.168.0.0</p>
+                    <p>broadcast 19.168.0.255</p>
+                    <p>gateway 192.168.0.1</p>
+                    <br><p> OU</p><br>
+                    <p>allow-hotplug enp0s3</p>
+                    <p>auto enp0s3</p>
+                    <p>iface enp0s3 inet dhcp</p><br><br>
+
+                    <p>$ nano /etc/resolv.conf</p><br>
+                    <p>nameserver 8.8.8.8</p>
+                    <p>nameserver 8.8.4.4</p>
+                </div>
+                <div class="Formatacao1">
+                    <p> 
+                        Caso tenha duas placas de rede instalar ( ifrename )
+                        E indentificar qual mac equivale a qual interface de rede
+                    </p>
+                </div>
+                <div class="terminal">
+                    <p>$ nano /etc/iftab</p><br>
+                    <p>enp0s3 mac 00:00:00:00:00:01</p>
+                    <p>enp0s4 mac 00:00:00:00:00:02</p>
+                </div>
+
+                <h1 class="titleH1">Ativar IP forwading</h1>
+                <div class="terminal">
+                    <p>$ nano /etc/sysctl.conf</p>
+                    <p>net.ipv4.ip_forward=1</p>
+                    <p>echo 1 > /proc/sys/net/ipv4/ip_forward</p>
+                </div>
+                <br><br><br>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-class">
+            </div>
+        </footer>
+        <script type="text/javascript" src="../js/bundle/app-min.js"></script>
+    </div>
+</body>
+</html
