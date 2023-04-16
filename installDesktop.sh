@@ -31,7 +31,6 @@ Select[$count]="->"
 while [[ ${opcao[${END}]} != $Selected ]]
 do
   clear
-  
   echo -e "\n\n***Menu de softwares [utilize usuario SUDO]***"
   echo "  "${Select[0]}"["${opcao[0]}"] Atualizar lista do apt"
   echo "  "${Select[1]}"["${opcao[1]}"] Instalar utilitarios do sistema [su -]"
@@ -51,7 +50,7 @@ do
   echo "  "${Select[15]}"["${opcao[15]}"] Instalar I3WM [GERENCIADOR DE JANELAS]"
   echo "  "${Select[16]}"["${opcao[16]}"] LIVREEEEEEE"
   echo "  "${Select[17]}"["${opcao[17]}"] Instalar VIM com plugins"
-  echo -e "  "${Select[${END}]}"["${opcao[${END}]}"] CONFIRM\n"
+  echo -e "  "${Select[${}]}"["${opcao[${END}]}"] CONFIRM\n"
 
    
   read -n{0,1,2,3} -d' ' -s arrow
